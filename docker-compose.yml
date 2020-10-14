@@ -1,6 +1,8 @@
 version: "2"
 services:
   kanboard:
+    build:
+      context: .
     image: kanboard/kanboard:latest
     ports:
       - "80:80"
