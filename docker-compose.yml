@@ -1,4 +1,4 @@
-version: "2"
+version: "3"
 services:
   kanboard:
     build:
@@ -11,6 +11,11 @@ services:
       - ./kanboard_data:/var/www/app/data
       - ./kanboard_plugins:/var/www/app/plugins
       - ./kanboard_ssl:/etc/nginx/ssl
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1k"
+        max-file: "3"
 
 volumes:
   kanboard_data:
